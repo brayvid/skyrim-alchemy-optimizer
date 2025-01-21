@@ -31,6 +31,7 @@ ingredients = pd.read_csv('ingredients_have.csv');ingredients
 
   <div id="df-1cc387aa-eeef-4267-a4f7-a9f6b7d3a607" class="colab-df-container">
     <div>
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -297,7 +298,8 @@ ingredients = pd.read_csv('ingredients_have.csv');ingredients
     </tr>
   </tbody>
 </table>
-
+</div>
+    <div class="colab-df-buttons">
 
 
 
@@ -309,8 +311,8 @@ ingredients = pd.read_csv('ingredients_have.csv');ingredients
 ```python
 # Potions list with magnitude and ingredient names (1,2 + optional 3rd)
 recipes = pd.read_csv('recipes_can_make.csv')
-recipes = recipes[recipes['Magnitude'] > 0];
-recipes.head(20)
+recipes = recipes[recipes['Magnitude'] > 0]
+recipes[['Magnitude','Ingredient 1','Ingredient 2','Ingredient 3','MyPotionID']].head(50)
 ```
 
 
@@ -323,345 +325,417 @@ recipes.head(20)
     <tr style="text-align: right;">
       <th></th>
       <th>Magnitude</th>
-      <th>Type</th>
       <th>Ingredient 1</th>
       <th>Ingredient 2</th>
       <th>Ingredient 3</th>
-      <th>Effects</th>
-      <th>Effect 1</th>
-      <th>Effect 2</th>
-      <th>Effect 3</th>
-      <th>Effect 4</th>
-      <th>Effect 5</th>
       <th>MyPotionID</th>
-      <th>Can Make</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>159</td>
-      <td>Mixed</td>
       <td>Blue Dartwing</td>
       <td>Blue Mountain Flower</td>
       <td>Glow Dust</td>
-      <td>3</td>
-      <td>Restore Health</td>
-      <td>Damage Magicka Regen</td>
-      <td>Resist Shock</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>3028</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>1</th>
       <td>156</td>
-      <td>Mixed</td>
       <td>Blue Dartwing</td>
       <td>Blue Mountain Flower</td>
       <td>Nightshade</td>
-      <td>2</td>
-      <td>Restore Health</td>
-      <td>Damage Magicka Regen</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>3037</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>2</th>
       <td>156</td>
-      <td>Mixed</td>
       <td>Blue Dartwing</td>
       <td>Blue Mountain Flower</td>
       <td>Spider Egg</td>
-      <td>2</td>
-      <td>Restore Health</td>
-      <td>Damage Magicka Regen</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>3045</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>3</th>
       <td>156</td>
-      <td>Mixed</td>
       <td>Blue Dartwing</td>
       <td>Blue Mountain Flower</td>
       <td>Spriggan Sap</td>
-      <td>2</td>
-      <td>Restore Health</td>
-      <td>Damage Magicka Regen</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>3046</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>4</th>
       <td>113</td>
-      <td>Mixed</td>
       <td>Blisterwort</td>
       <td>Blue Butterfly Wing</td>
       <td>Blue Mountain Flower</td>
-      <td>4</td>
-      <td>Damage Stamina</td>
-      <td>Restore Health</td>
-      <td>Fortify Conjuration</td>
-      <td>Damage Magicka Regen</td>
-      <td>NaN</td>
       <td>2130</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>5</th>
       <td>113</td>
-      <td>Mixed</td>
       <td>Blue Butterfly Wing</td>
       <td>Blue Mountain Flower</td>
       <td>Rock Warbler Egg</td>
-      <td>4</td>
-      <td>Fortify Conjuration</td>
-      <td>Damage Magicka Regen</td>
-      <td>Restore Health</td>
-      <td>Damage Stamina</td>
-      <td>NaN</td>
       <td>2680</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>6</th>
       <td>112</td>
-      <td>Mixed</td>
       <td>Frost Mirriam</td>
       <td>Histcarp</td>
       <td>Purple Mountain Flower</td>
-      <td>4</td>
-      <td>Damage Stamina Regen</td>
-      <td>Restore Stamina</td>
-      <td>Fortify Sneak</td>
-      <td>Resist Frost</td>
-      <td>NaN</td>
       <td>10371</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>7</th>
       <td>110</td>
-      <td>Mixed</td>
       <td>Blue Butterfly Wing</td>
       <td>Blue Mountain Flower</td>
       <td>Butterfly Wing</td>
-      <td>3</td>
-      <td>Fortify Conjuration</td>
-      <td>Damage Magicka Regen</td>
-      <td>Restore Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>2666</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>8</th>
       <td>110</td>
-      <td>Mixed</td>
       <td>Blue Butterfly Wing</td>
       <td>Blue Mountain Flower</td>
       <td>Imp Stool</td>
-      <td>3</td>
-      <td>Fortify Conjuration</td>
-      <td>Damage Magicka Regen</td>
-      <td>Restore Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>2677</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>9</th>
       <td>110</td>
-      <td>Mixed</td>
       <td>Blue Butterfly Wing</td>
       <td>Blue Mountain Flower</td>
       <td>Swamp Fungal Pod</td>
-      <td>3</td>
-      <td>Fortify Conjuration</td>
-      <td>Damage Magicka Regen</td>
-      <td>Restore Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>2684</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>10</th>
       <td>110</td>
-      <td>Mixed</td>
       <td>Glow Dust</td>
       <td>Nightshade</td>
       <td>River Betty</td>
-      <td>3</td>
-      <td>Damage Magicka Regen</td>
-      <td>Fortify Destruction</td>
-      <td>Damage Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>11628</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>11</th>
       <td>109</td>
-      <td>Mixed</td>
       <td>Blisterwort</td>
       <td>Blue Mountain Flower</td>
       <td>Spriggan Sap</td>
-      <td>3</td>
-      <td>Restore Health</td>
-      <td>Damage Magicka Regen</td>
-      <td>Fortify Smithing</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>2210</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>12</th>
       <td>109</td>
-      <td>Mixed</td>
       <td>Blue Butterfly Wing</td>
       <td>Bone Meal</td>
       <td>Spriggan Sap</td>
-      <td>4</td>
-      <td>Damage Stamina</td>
-      <td>Fortify Conjuration</td>
-      <td>Damage Magicka Regen</td>
-      <td>Fortify Enchanting</td>
-      <td>NaN</td>
       <td>2703</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>13</th>
       <td>109</td>
-      <td>Mixed</td>
       <td>Butterfly Wing</td>
       <td>Glow Dust</td>
       <td>Nightshade</td>
-      <td>4</td>
-      <td>Damage Magicka</td>
-      <td>Damage Magicka Regen</td>
-      <td>Lingering Damage Stamina</td>
-      <td>Fortify Destruction</td>
-      <td>NaN</td>
       <td>4738</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>14</th>
       <td>109</td>
-      <td>Mixed</td>
       <td>Creep Cluster</td>
       <td>Ectoplasm</td>
       <td>Histcarp</td>
-      <td>3</td>
-      <td>Restore Magicka</td>
-      <td>Fortify Magicka</td>
-      <td>Damage Stamina Regen</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>6302</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>15</th>
       <td>109</td>
-      <td>Mixed</td>
       <td>Creep Cluster</td>
       <td>Histcarp</td>
       <td>Red Mountain Flower</td>
-      <td>3</td>
-      <td>Damage Stamina Regen</td>
-      <td>Restore Magicka</td>
-      <td>Fortify Magicka</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>6550</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>16</th>
       <td>109</td>
-      <td>Mixed</td>
       <td>Creep Cluster</td>
       <td>River Betty</td>
       <td>Skeever Tail</td>
-      <td>3</td>
-      <td>Fortify Carry Weight</td>
-      <td>Damage Stamina Regen</td>
-      <td>Damage Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>6725</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>17</th>
       <td>109</td>
-      <td>Mixed</td>
       <td>Nightshade</td>
       <td>River Betty</td>
       <td>Spriggan Sap</td>
-      <td>3</td>
-      <td>Damage Health</td>
-      <td>Damage Magicka Regen</td>
-      <td>Fortify Alteration</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>14461</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>18</th>
       <td>108</td>
-      <td>Mixed</td>
       <td>Blisterwort</td>
       <td>Blue Butterfly Wing</td>
       <td>Spriggan Sap</td>
-      <td>4</td>
-      <td>Damage Stamina</td>
-      <td>Damage Magicka Regen</td>
-      <td>Fortify Enchanting</td>
-      <td>Fortify Smithing</td>
-      <td>NaN</td>
       <td>2154</td>
-      <td>True</td>
     </tr>
     <tr>
       <th>19</th>
       <td>108</td>
-      <td>Mixed</td>
       <td>Blisterwort</td>
       <td>Blue Mountain Flower</td>
       <td>Spider Egg</td>
-      <td>3</td>
-      <td>Restore Health</td>
-      <td>Damage Stamina</td>
-      <td>Damage Magicka Regen</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>2209</td>
-      <td>True</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>108</td>
+      <td>Blue Butterfly Wing</td>
+      <td>Blue Mountain Flower</td>
+      <td>Bone Meal</td>
+      <td>2665</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>108</td>
+      <td>Blue Butterfly Wing</td>
+      <td>Blue Mountain Flower</td>
+      <td>Canis Root</td>
+      <td>2667</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>108</td>
+      <td>Blue Butterfly Wing</td>
+      <td>Blue Mountain Flower</td>
+      <td>Nirnroot</td>
+      <td>2679</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>108</td>
+      <td>Blue Butterfly Wing</td>
+      <td>Blue Mountain Flower</td>
+      <td>Spider Egg</td>
+      <td>2682</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>108</td>
+      <td>Blue Butterfly Wing</td>
+      <td>Bone Meal</td>
+      <td>Glow Dust</td>
+      <td>2693</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>108</td>
+      <td>Blue Butterfly Wing</td>
+      <td>Bone Meal</td>
+      <td>Nightshade</td>
+      <td>2700</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>108</td>
+      <td>Blue Butterfly Wing</td>
+      <td>Bone Meal</td>
+      <td>Spider Egg</td>
+      <td>2702</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>108</td>
+      <td>Blue Butterfly Wing</td>
+      <td>Glow Dust</td>
+      <td>Hagraven Feathers</td>
+      <td>2860</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>108</td>
+      <td>Blue Butterfly Wing</td>
+      <td>Hagraven Feathers</td>
+      <td>Spider Egg</td>
+      <td>2908</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>108</td>
+      <td>Blue Butterfly Wing</td>
+      <td>Lavender</td>
+      <td>Spider Egg</td>
+      <td>2969</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>108</td>
+      <td>Blue Dartwing</td>
+      <td>Glow Dust</td>
+      <td>Nightshade</td>
+      <td>3203</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>108</td>
+      <td>Blue Mountain Flower</td>
+      <td>Bone Meal</td>
+      <td>Spider Egg</td>
+      <td>3416</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>108</td>
+      <td>Blue Mountain Flower</td>
+      <td>Butterfly Wing</td>
+      <td>Glow Dust</td>
+      <td>3429</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>108</td>
+      <td>Blue Mountain Flower</td>
+      <td>Glow Dust</td>
+      <td>Hagraven Feathers</td>
+      <td>3628</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>108</td>
+      <td>Blue Mountain Flower</td>
+      <td>Glow Dust</td>
+      <td>Swamp Fungal Pod</td>
+      <td>3643</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>108</td>
+      <td>Blue Mountain Flower</td>
+      <td>Rock Warbler Egg</td>
+      <td>Spider Egg</td>
+      <td>3780</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>108</td>
+      <td>Glow Dust</td>
+      <td>Hagraven Feathers</td>
+      <td>Nightshade</td>
+      <td>11513</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>108</td>
+      <td>Glow Dust</td>
+      <td>Luna Moth Wing</td>
+      <td>Nightshade</td>
+      <td>11598</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>108</td>
+      <td>Glow Dust</td>
+      <td>Nightshade</td>
+      <td>Nordic Barnacle</td>
+      <td>11624</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>108</td>
+      <td>Glow Dust</td>
+      <td>Nightshade</td>
+      <td>Snowberries</td>
+      <td>11631</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>108</td>
+      <td>Glow Dust</td>
+      <td>Nightshade</td>
+      <td>Swamp Fungal Pod</td>
+      <td>11632</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>107</td>
+      <td>Blisterwort</td>
+      <td>Spider Egg</td>
+      <td>Spriggan Sap</td>
+      <td>2648</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>107</td>
+      <td>Blue Butterfly Wing</td>
+      <td>Canis Root</td>
+      <td>Spider Egg</td>
+      <td>2724</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>107</td>
+      <td>Blue Mountain Flower</td>
+      <td>Imp Stool</td>
+      <td>Nightshade</td>
+      <td>3716</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>107</td>
+      <td>Canis Root</td>
+      <td>Spider Egg</td>
+      <td>Spriggan Sap</td>
+      <td>5163</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>107</td>
+      <td>Creep Cluster</td>
+      <td>Ectoplasm</td>
+      <td>Skeever Tail</td>
+      <td>6318</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>107</td>
+      <td>Creep Cluster</td>
+      <td>Frost Mirriam</td>
+      <td>Purple Mountain Flower</td>
+      <td>6392</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>107</td>
+      <td>Creep Cluster</td>
+      <td>Frost Mirriam</td>
+      <td>Red Mountain Flower</td>
+      <td>6393</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>107</td>
+      <td>Creep Cluster</td>
+      <td>Frost Mirriam</td>
+      <td>Taproot</td>
+      <td>6402</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>107</td>
+      <td>Creep Cluster</td>
+      <td>Frost Mirriam</td>
+      <td>White Cap</td>
+      <td>6406</td>
     </tr>
   </tbody>
 </table>
-
-
+</div>
+    <div class="colab-df-buttons">
 
 
 
@@ -682,7 +756,7 @@ for i in range(len(recipes)):
   if not pd.isnull(recipes.loc[i, "Ingredient 3"]):
     if ingredients.iloc[ingredients["Ingredient"].str.find(recipes.loc[i, "Ingredient 3"]).idxmax()]["Quantity"] > 0:
       A.iloc[ingredients["Ingredient"].str.find(recipes.loc[i, "Ingredient 3"]).idxmax(), i] = 1
-A.head(20)
+A
 ```
 
 
@@ -1196,10 +1270,755 @@ A.head(20)
       <td>0</td>
       <td>0</td>
     </tr>
+    <tr>
+      <th>20</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
   </tbody>
 </table>
-<p>20 rows × 2385 columns</p>
-
+<p>51 rows × 2385 columns</p>
+</div>
+    <div class="colab-df-buttons">
 
 
 
@@ -1249,7 +2068,7 @@ num_potions = int(sum(res.x))
 indices_to_make = np.nonzero(res.x > 0)
 to_make_df = recipes.iloc[indices_to_make].copy()
 to_make_df.loc[:,'QtyToMake'] = res.x[indices_to_make].astype(int)
-to_make_df.head(len(to_make_df))
+to_make_df[['Magnitude','Type','Ingredient 1','Ingredient 2','Ingredient 3','MyPotionID','QtyToMake']].head(50)
 ```
 
 
@@ -1263,14 +2082,7 @@ to_make_df.head(len(to_make_df))
       <th>Ingredient 1</th>
       <th>Ingredient 2</th>
       <th>Ingredient 3</th>
-      <th>Effects</th>
-      <th>Effect 1</th>
-      <th>Effect 2</th>
-      <th>Effect 3</th>
-      <th>Effect 4</th>
-      <th>Effect 5</th>
       <th>MyPotionID</th>
-      <th>Can Make</th>
       <th>QtyToMake</th>
     </tr>
   </thead>
@@ -1282,14 +2094,7 @@ to_make_df.head(len(to_make_df))
       <td>Frost Mirriam</td>
       <td>Histcarp</td>
       <td>Purple Mountain Flower</td>
-      <td>4</td>
-      <td>Damage Stamina Regen</td>
-      <td>Restore Stamina</td>
-      <td>Fortify Sneak</td>
-      <td>Resist Frost</td>
-      <td>NaN</td>
       <td>10371</td>
-      <td>True</td>
       <td>2</td>
     </tr>
     <tr>
@@ -1299,14 +2104,7 @@ to_make_df.head(len(to_make_df))
       <td>Blue Butterfly Wing</td>
       <td>Blue Mountain Flower</td>
       <td>Butterfly Wing</td>
-      <td>3</td>
-      <td>Fortify Conjuration</td>
-      <td>Damage Magicka Regen</td>
-      <td>Restore Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>2666</td>
-      <td>True</td>
       <td>4</td>
     </tr>
     <tr>
@@ -1316,14 +2114,7 @@ to_make_df.head(len(to_make_df))
       <td>Blisterwort</td>
       <td>Blue Mountain Flower</td>
       <td>Spriggan Sap</td>
-      <td>3</td>
-      <td>Restore Health</td>
-      <td>Damage Magicka Regen</td>
-      <td>Fortify Smithing</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>2210</td>
-      <td>True</td>
       <td>3</td>
     </tr>
     <tr>
@@ -1333,14 +2124,7 @@ to_make_df.head(len(to_make_df))
       <td>Blisterwort</td>
       <td>Blue Mountain Flower</td>
       <td>Spider Egg</td>
-      <td>3</td>
-      <td>Restore Health</td>
-      <td>Damage Stamina</td>
-      <td>Damage Magicka Regen</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>2209</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1350,14 +2134,7 @@ to_make_df.head(len(to_make_df))
       <td>Blue Mountain Flower</td>
       <td>Bone Meal</td>
       <td>Spider Egg</td>
-      <td>3</td>
-      <td>Fortify Conjuration</td>
-      <td>Damage Stamina</td>
-      <td>Damage Magicka Regen</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>3416</td>
-      <td>True</td>
       <td>4</td>
     </tr>
     <tr>
@@ -1367,14 +2144,7 @@ to_make_df.head(len(to_make_df))
       <td>Blue Mountain Flower</td>
       <td>Glow Dust</td>
       <td>Hagraven Feathers</td>
-      <td>3</td>
-      <td>Damage Magicka Regen</td>
-      <td>Damage Magicka</td>
-      <td>Fortify Conjuration</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>3628</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1384,14 +2154,7 @@ to_make_df.head(len(to_make_df))
       <td>Blue Mountain Flower</td>
       <td>Glow Dust</td>
       <td>Swamp Fungal Pod</td>
-      <td>3</td>
-      <td>Damage Magicka Regen</td>
-      <td>Resist Shock</td>
-      <td>Restore Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>3643</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1401,14 +2164,7 @@ to_make_df.head(len(to_make_df))
       <td>Blue Mountain Flower</td>
       <td>Rock Warbler Egg</td>
       <td>Spider Egg</td>
-      <td>3</td>
-      <td>Restore Health</td>
-      <td>Damage Stamina</td>
-      <td>Damage Magicka Regen</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>3780</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1418,14 +2174,7 @@ to_make_df.head(len(to_make_df))
       <td>Creep Cluster</td>
       <td>Ectoplasm</td>
       <td>Skeever Tail</td>
-      <td>3</td>
-      <td>Restore Magicka</td>
-      <td>Damage Stamina Regen</td>
-      <td>Damage Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>6318</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1435,14 +2184,7 @@ to_make_df.head(len(to_make_df))
       <td>Frost Mirriam</td>
       <td>Purple Mountain Flower</td>
       <td>Skeever Tail</td>
-      <td>3</td>
-      <td>Resist Frost</td>
-      <td>Fortify Sneak</td>
-      <td>Damage Stamina Regen</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>10519</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1452,14 +2194,7 @@ to_make_df.head(len(to_make_df))
       <td>Blue Mountain Flower</td>
       <td>Lavender</td>
       <td>Nightshade</td>
-      <td>2</td>
-      <td>Fortify Conjuration</td>
-      <td>Damage Magicka Regen</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>3749</td>
-      <td>True</td>
       <td>7</td>
     </tr>
     <tr>
@@ -1469,14 +2204,7 @@ to_make_df.head(len(to_make_df))
       <td>Blue Mountain Flower</td>
       <td>Lavender</td>
       <td>Spider Egg</td>
-      <td>2</td>
-      <td>Fortify Conjuration</td>
-      <td>Damage Magicka Regen</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>3755</td>
-      <td>True</td>
       <td>2</td>
     </tr>
     <tr>
@@ -1486,14 +2214,7 @@ to_make_df.head(len(to_make_df))
       <td>Blue Dartwing</td>
       <td>Swamp Fungal Pod</td>
       <td>NaN</td>
-      <td>2</td>
-      <td>Resist Shock</td>
-      <td>Restore Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>3388</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1503,14 +2224,7 @@ to_make_df.head(len(to_make_df))
       <td>Deathbell</td>
       <td>Salt Pile</td>
       <td>Taproot</td>
-      <td>3</td>
-      <td>Slow</td>
-      <td>Weakness to Magic</td>
-      <td>Regenerate Magicka</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>8001</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1520,14 +2234,7 @@ to_make_df.head(len(to_make_df))
       <td>River Betty</td>
       <td>Salt Pile</td>
       <td>Troll Fat</td>
-      <td>2</td>
-      <td>Slow</td>
-      <td>Damage Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>15006</td>
-      <td>True</td>
       <td>2</td>
     </tr>
     <tr>
@@ -1537,14 +2244,7 @@ to_make_df.head(len(to_make_df))
       <td>Deathbell</td>
       <td>Nirnroot</td>
       <td>Salt Pile</td>
-      <td>2</td>
-      <td>Damage Health</td>
-      <td>Slow</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>7937</td>
-      <td>True</td>
       <td>2</td>
     </tr>
     <tr>
@@ -1554,14 +2254,7 @@ to_make_df.head(len(to_make_df))
       <td>Deathbell</td>
       <td>Salt Pile</td>
       <td>Troll Fat</td>
-      <td>2</td>
-      <td>Slow</td>
-      <td>Damage Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>8004</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1571,14 +2264,7 @@ to_make_df.head(len(to_make_df))
       <td>Deathbell</td>
       <td>Salt Pile</td>
       <td>NaN</td>
-      <td>1</td>
-      <td>Slow</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>8006</td>
-      <td>True</td>
       <td>2</td>
     </tr>
     <tr>
@@ -1588,14 +2274,7 @@ to_make_df.head(len(to_make_df))
       <td>Elves Ear</td>
       <td>Fire Salts</td>
       <td>Salt Pile</td>
-      <td>4</td>
-      <td>Restore Magicka</td>
-      <td>Weakness to Frost</td>
-      <td>Resist Fire</td>
-      <td>Regenerate Magicka</td>
-      <td>NaN</td>
       <td>8930</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1605,14 +2284,7 @@ to_make_df.head(len(to_make_df))
       <td>Dragons Tongue</td>
       <td>Fly Amanita</td>
       <td>Scaly Pholiota</td>
-      <td>4</td>
-      <td>Resist Fire</td>
-      <td>Fortify Two-handed</td>
-      <td>Fortify Illusion</td>
-      <td>Regenerate Stamina</td>
-      <td>NaN</td>
       <td>8094</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1622,14 +2294,7 @@ to_make_df.head(len(to_make_df))
       <td>Garlic</td>
       <td>Taproot</td>
       <td>Vampire Dust</td>
-      <td>3</td>
-      <td>Regenerate Magicka</td>
-      <td>Restore Magicka</td>
-      <td>Regenerate Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>11060</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1639,14 +2304,7 @@ to_make_df.head(len(to_make_df))
       <td>Ectoplasm</td>
       <td>Giant Lichen</td>
       <td>Void Salts</td>
-      <td>4</td>
-      <td>Restore Magicka</td>
-      <td>Weakness to Shock</td>
-      <td>Damage Health</td>
-      <td>Fortify Magicka</td>
-      <td>NaN</td>
       <td>8576</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1656,14 +2314,7 @@ to_make_df.head(len(to_make_df))
       <td>Canis Root</td>
       <td>Imp Stool</td>
       <td>Rock Warbler Egg</td>
-      <td>4</td>
-      <td>Paralysis</td>
-      <td>Restore Health</td>
-      <td>Fortify One-Handed</td>
-      <td>Damage Stamina</td>
-      <td>NaN</td>
       <td>5088</td>
-      <td>True</td>
       <td>2</td>
     </tr>
     <tr>
@@ -1673,14 +2324,7 @@ to_make_df.head(len(to_make_df))
       <td>Luna Moth Wing</td>
       <td>Nordic Barnacle</td>
       <td>Orange Dartwing</td>
-      <td>3</td>
-      <td>Damage Magicka</td>
-      <td>Regenerate Health</td>
-      <td>Fortify Pickpocket</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>14094</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1690,14 +2334,7 @@ to_make_df.head(len(to_make_df))
       <td>Dragons Tongue</td>
       <td>Elves Ear</td>
       <td>Mora Tapinella</td>
-      <td>3</td>
-      <td>Resist Fire</td>
-      <td>Restore Magicka</td>
-      <td>Fortify Illusion</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>8058</td>
-      <td>True</td>
       <td>2</td>
     </tr>
     <tr>
@@ -1707,14 +2344,7 @@ to_make_df.head(len(to_make_df))
       <td>Honeycomb</td>
       <td>Purple Mountain Flower</td>
       <td>Slaughterfish Scales</td>
-      <td>3</td>
-      <td>Restore Stamina</td>
-      <td>Resist Frost</td>
-      <td>Fortify Block</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>12905</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1724,14 +2354,7 @@ to_make_df.head(len(to_make_df))
       <td>Mudcrab Chitin</td>
       <td>Purple Mountain Flower</td>
       <td>Thistle Branch</td>
-      <td>3</td>
-      <td>Restore Stamina</td>
-      <td>Resist Frost</td>
-      <td>Resist Poison</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>14343</td>
-      <td>True</td>
       <td>2</td>
     </tr>
     <tr>
@@ -1741,14 +2364,7 @@ to_make_df.head(len(to_make_df))
       <td>Ectoplasm</td>
       <td>Red Mountain Flower</td>
       <td>NaN</td>
-      <td>3</td>
-      <td>Restore Magicka</td>
-      <td>Fortify Magicka</td>
-      <td>Damage Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>8873</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1758,14 +2374,7 @@ to_make_df.head(len(to_make_df))
       <td>Dragons Tongue</td>
       <td>Elves Ear</td>
       <td>White Cap</td>
-      <td>3</td>
-      <td>Resist Fire</td>
-      <td>Weakness to Frost</td>
-      <td>Restore Magicka</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>8067</td>
-      <td>True</td>
       <td>2</td>
     </tr>
     <tr>
@@ -1775,14 +2384,7 @@ to_make_df.head(len(to_make_df))
       <td>Elves Ear</td>
       <td>Snowberries</td>
       <td>White Cap</td>
-      <td>3</td>
-      <td>Resist Fire</td>
-      <td>Weakness to Frost</td>
-      <td>Restore Magicka</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>9130</td>
-      <td>True</td>
       <td>2</td>
     </tr>
     <tr>
@@ -1792,14 +2394,7 @@ to_make_df.head(len(to_make_df))
       <td>Elves Ear</td>
       <td>Ice Wraith Teeth</td>
       <td>White Cap</td>
-      <td>3</td>
-      <td>Weakness to Frost</td>
-      <td>Fortify Heavy Armor</td>
-      <td>Restore Magicka</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>9037</td>
-      <td>True</td>
       <td>2</td>
     </tr>
     <tr>
@@ -1809,14 +2404,7 @@ to_make_df.head(len(to_make_df))
       <td>Bone Meal</td>
       <td>Lavender</td>
       <td>Nirnroot</td>
-      <td>3</td>
-      <td>Fortify Conjuration</td>
-      <td>Damage Stamina</td>
-      <td>Resist Magic</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>4095</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1826,14 +2414,7 @@ to_make_df.head(len(to_make_df))
       <td>Purple Mountain Flower</td>
       <td>Snowberries</td>
       <td>Torchbug Thorax</td>
-      <td>3</td>
-      <td>Resist Frost</td>
-      <td>Restore Stamina</td>
-      <td>Lingering Damage Magicka</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>14933</td>
-      <td>True</td>
       <td>3</td>
     </tr>
     <tr>
@@ -1843,14 +2424,7 @@ to_make_df.head(len(to_make_df))
       <td>Ectoplasm</td>
       <td>Elves Ear</td>
       <td>Tundra Cotton</td>
-      <td>2</td>
-      <td>Restore Magicka</td>
-      <td>Fortify Magicka</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>8459</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1860,14 +2434,7 @@ to_make_df.head(len(to_make_df))
       <td>Ectoplasm</td>
       <td>Giant Lichen</td>
       <td>Tundra Cotton</td>
-      <td>2</td>
-      <td>Restore Magicka</td>
-      <td>Fortify Magicka</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>8575</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1877,14 +2444,7 @@ to_make_df.head(len(to_make_df))
       <td>Garlic</td>
       <td>Lavender</td>
       <td>Luna Moth Wing</td>
-      <td>2</td>
-      <td>Fortify Stamina</td>
-      <td>Regenerate Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>10953</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1894,14 +2454,7 @@ to_make_df.head(len(to_make_df))
       <td>Garlic</td>
       <td>Lavender</td>
       <td>Salt Pile</td>
-      <td>2</td>
-      <td>Fortify Stamina</td>
-      <td>Regenerate Magicka</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>10961</td>
-      <td>True</td>
       <td>5</td>
     </tr>
     <tr>
@@ -1911,14 +2464,7 @@ to_make_df.head(len(to_make_df))
       <td>Honeycomb</td>
       <td>Purple Mountain Flower</td>
       <td>Tundra Cotton</td>
-      <td>2</td>
-      <td>Restore Stamina</td>
-      <td>Fortify Block</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>12911</td>
-      <td>True</td>
       <td>3</td>
     </tr>
     <tr>
@@ -1928,14 +2474,7 @@ to_make_df.head(len(to_make_df))
       <td>Luna Moth Wing</td>
       <td>Nordic Barnacle</td>
       <td>NaN</td>
-      <td>2</td>
-      <td>Damage Magicka</td>
-      <td>Regenerate Health</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>14098</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1945,14 +2484,7 @@ to_make_df.head(len(to_make_df))
       <td>Hagraven Feathers</td>
       <td>Lavender</td>
       <td>Luna Moth Wing</td>
-      <td>2</td>
-      <td>Fortify Conjuration</td>
-      <td>Damage Magicka</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>12101</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1962,14 +2494,7 @@ to_make_df.head(len(to_make_df))
       <td>Orange Dartwing</td>
       <td>Purple Mountain Flower</td>
       <td>Snowberries</td>
-      <td>2</td>
-      <td>Restore Stamina</td>
-      <td>Resist Frost</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>14612</td>
-      <td>True</td>
       <td>1</td>
     </tr>
     <tr>
@@ -1979,18 +2504,13 @@ to_make_df.head(len(to_make_df))
       <td>Purple Mountain Flower</td>
       <td>Slaughterfish Scales</td>
       <td>Tundra Cotton</td>
-      <td>2</td>
-      <td>Resist Frost</td>
-      <td>Fortify Block</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
       <td>14922</td>
-      <td>True</td>
       <td>2</td>
     </tr>
   </tbody>
 </table>
+</div>
+    <div class="colab-df-buttons">
 
 ```python
 print(f"To maximize magnitude and therefore value, create {num_potions} potions of the {len(to_make_df)} unique types listed above for a total magnitude of {total_magnitude}.")
