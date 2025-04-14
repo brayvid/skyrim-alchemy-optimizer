@@ -4,7 +4,7 @@
 
 <h4>Blake Rayvid - <a href=https://github.com/brayvid>https://github.com/brayvid</a></h4>
 
-Make the most of the ingredients you have. Maximize total magnitude (essentially in-game value) with integer linear programming in scipy.
+Make the most of the ingredients you have in The Elder Scrolls V: Skyrim. Maximize total magnitude (essentially in-game value) with integer linear programming in scipy.
 
 
 
