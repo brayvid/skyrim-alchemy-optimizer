@@ -2518,3 +2518,6 @@ print(f"To maximize magnitude and therefore value, create {num_potions} potions 
 
     To maximize magnitude and therefore value, create 76 potions of the 42 unique types listed above for a total magnitude of 3905.
 
+----
+
+<p align="center">&copy; Copyright 2026 <a href="https://blakerayvid.com">Blake Rayvid</a>. All rights reserved.</p>
